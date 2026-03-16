@@ -3,9 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { getHomeContent } from "@/content/home";
-
-const { footer } = getHomeContent();
 
 const menu = [
   { label: "Features", href: "#features" },
