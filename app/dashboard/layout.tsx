@@ -45,10 +45,19 @@ export default async function DashboardLayout({
         <aside className="hidden w-[264px] shrink-0 border-r bg-card/50 md:flex md:flex-col">
           <div className="p-5">
             <div className="flex items-center gap-2.5">
-              <div className="grid size-8 place-items-center rounded-lg bg-foreground text-background text-sm font-bold shadow-sm">
-                P
+              <div className="grid size-8 place-items-center rounded-lg bg-gradient-to-tr from-primary via-primary/80 to-primary text-background text-sm font-bold shadow-sm">
+                {/* MailSprout logo mark */}
+                <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
+                  <rect width="24" height="24" rx="5" fill="url(#ms-bg)"/>
+                  <defs>
+                    <linearGradient id="ms-bg" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#D247BF"/>
+                      <stop offset="1" stopColor="#fb7232"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
               </div>
-              <span className="font-semibold tracking-tight">Panda Admin</span>
+              <span className="font-semibold tracking-tight text-lg">MailSprout</span>
             </div>
           </div>
 
