@@ -1,489 +1,293 @@
-// ─── Hero ───────────────────────────────────────────────────────────────────
-export type HeroContent = {
-  badgeInner: string;
-  badgeOuter: string;
-  titleBefore: string;
-  titleHighlight: string;
-  titleAfter: string;
-  subtitle: string;
-  primaryCta: { label: string; href: string };
-  secondaryCta: { label: string; href: string };
-  heroImageLight: string;
-  heroImageDark: string;
-  heroImageAlt: string;
-};
-
-// ─── Sponsors ───────────────────────────────────────────────────────────────
-export type SponsorItem = { icon: string; name: string };
-export type SponsorsContent = {
-  heading: string;
-  items: SponsorItem[];
-};
-
-// ─── Benefits ───────────────────────────────────────────────────────────────
-export type BenefitItem = { icon: string; title: string; description: string };
-export type BenefitsContent = {
-  eyebrow: string;
-  heading: string;
-  description: string;
-  items: BenefitItem[];
-};
-
-// ─── Feature Grid ───────────────────────────────────────────────────────────
-export type FeatureItem = { icon: string; title: string; description: string };
-export type FeaturesContent = {
-  eyebrow: string;
-  heading: string;
-  subtitle: string;
-  items: FeatureItem[];
-};
-
-// ─── Services ───────────────────────────────────────────────────────────────
-export type ServiceItem = { title: string; description: string; pro: boolean };
-export type ServicesContent = {
-  eyebrow: string;
-  heading: string;
-  subtitle: string;
-  items: ServiceItem[];
-};
-
-// ─── Testimonials ───────────────────────────────────────────────────────────
-export type TestimonialItem = {
-  image: string;
-  name: string;
-  role: string;
-  comment: string;
-  rating: number;
-};
-export type TestimonialsContent = {
-  eyebrow: string;
-  heading: string;
-  reviews: TestimonialItem[];
-};
-
-// ─── Team ───────────────────────────────────────────────────────────────────
-export type SocialLink = { name: string; url: string };
-export type TeamMember = {
-  imageUrl: string;
-  firstName: string;
-  lastName: string;
-  positions: string[];
-  socialNetworks: SocialLink[];
-};
-export type TeamContent = {
-  eyebrow: string;
-  heading: string;
-  members: TeamMember[];
-};
-
-// ─── Pricing ────────────────────────────────────────────────────────────────
-export type PricingPlan = {
-  title: string;
-  popular: boolean;
-  price: number;
-  description: string;
-  buttonText: string;
-  benefits: string[];
-};
-export type PricingContent = {
-  eyebrow: string;
-  heading: string;
-  subtitle: string;
-  priceSuffix: string;
-  plans: PricingPlan[];
-};
-
-// ─── Contact ────────────────────────────────────────────────────────────────
-export type ContactInfoBlock = { label: string; value: string | string[] };
-export type ContactContent = {
-  eyebrow: string;
-  heading: string;
-  description: string;
-  mailtoAddress: string;
-  info: {
-    address: ContactInfoBlock;
-    phone: ContactInfoBlock;
-    email: ContactInfoBlock;
-    hours: ContactInfoBlock;
-  };
-  formSubjects: string[];
-  formSubmitLabel: string;
-};
-
-// ─── FAQ ────────────────────────────────────────────────────────────────────
-export type FaqItem = { question: string; answer: string };
-export type FaqContent = {
-  eyebrow: string;
-  heading: string;
-  items: FaqItem[];
-};
-
-// ─── Footer ─────────────────────────────────────────────────────────────────
-export type FooterLink = { label: string; href: string };
-export type FooterColumn = { heading: string; links: FooterLink[] };
-export type FooterContent = {
-  brandName: string;
-  columns: FooterColumn[];
-  copyright: string;
-  attribution: { label: string; href: string };
-};
-
-// ─── Navbar ─────────────────────────────────────────────────────────────────
-export type NavRoute = { href: string; label: string };
-export type NavFeature = { title: string; description: string };
-export type NavbarContent = {
-  brandName: string;
-  routes: NavRoute[];
-  featureDropdownLabel: string;
-  featureImage: { src: string; alt: string };
-  features: NavFeature[];
-  signInLabel: string;
-  signUpLabel: string;
-  dashboardLabel: string;
-  githubLink: { href: string; ariaLabel: string };
-};
-
-// ─── Root ───────────────────────────────────────────────────────────────────
-export type HomeContent = {
-  hero: HeroContent;
-  sponsors: SponsorsContent;
-  benefits: BenefitsContent;
-  features: FeaturesContent;
-  services: ServicesContent;
-  testimonials: TestimonialsContent;
-  team: TeamContent;
-  pricing: PricingContent;
-  contact: ContactContent;
-  faq: FaqContent;
-  footer: FooterContent;
-  navbar: NavbarContent;
-};
-
-// ─── Defaults ───────────────────────────────────────────────────────────────
-
-export const defaultHomeContent: HomeContent = {
-  // ── Hero ─────────────────────────────────────────────────────────────────
-  hero: {
-    badgeInner: "Launch",
-    badgeOuter: "Panda SaaS starter is ready",
-    titleBefore: "Build your next",
-    titleHighlight: "SaaS",
-    titleAfter: "app in days, not weeks",
-    subtitle:
-      "Panda gives you authentication, billing-ready patterns, team flows, and polished UI foundations so you can ship faster with confidence.",
-    primaryCta: { label: "Start Building", href: "#pricing" },
-    secondaryCta: { label: "Explore features", href: "#features" },
-    heroImageLight: "/hero-image-light.jpeg",
-    heroImageDark: "/hero-image-dark.jpeg",
-    heroImageAlt: "Panda dashboard preview",
-  },
-
-  // ── Sponsors ─────────────────────────────────────────────────────────────
-  sponsors: {
-    heading: "Built with trusted tools",
-    items: [
-      { icon: "Crown", name: "Vercel" },
-      { icon: "Vegan", name: "Stripe" },
-      { icon: "Ghost", name: "OpenAI" },
-      { icon: "Puzzle", name: "Supabase" },
-      { icon: "Squirrel", name: "Clerk" },
-      { icon: "Cookie", name: "Resend" },
-      { icon: "Drama", name: "Sentry" },
-    ],
-  },
-
-  // ── Benefits ─────────────────────────────────────────────────────────────
-  benefits: {
-    eyebrow: "Why Panda",
-    heading: "A practical SaaS app builder starter",
-    description:
-      "Built for teams that want production-ready foundations with room to customize, not a rigid template you outgrow in a week.",
-    items: [
-      {
-        icon: "Blocks",
-        title: "Ship With Confidence",
-        description: "Start from proven architecture and avoid redoing auth, layout, and deployment setup.",
-      },
-      {
-        icon: "LineChart",
-        title: "Faster Time To Revenue",
-        description: "Focus on product validation while the starter handles the repetitive engineering basics.",
-      },
-      {
-        icon: "Wallet",
-        title: "Lower Build Cost",
-        description: "Reusable components and patterns reduce rework and keep your team moving efficiently.",
-      },
-      {
-        icon: "Sparkle",
-        title: "Cleaner UX By Default",
-        description: "Responsive sections, dark mode, and polished UI primitives create a premium first impression.",
-      },
-    ],
-  },
-
-  // ── Features ─────────────────────────────────────────────────────────────
-  features: {
-    eyebrow: "Features",
-    heading: "What you get out of the box",
-    subtitle:
-      "Panda combines developer speed and production-grade UX so you can spend your time shipping features instead of rebuilding starter infrastructure.",
-    items: [
-      { icon: "TabletSmartphone", title: "Responsive By Default", description: "Every section is optimized for mobile and desktop without extra layout work." },
-      { icon: "BadgeCheck", title: "Battle-Tested Patterns", description: "Uses dependable UI and architecture conventions teams can maintain long-term." },
-      { icon: "Goal", title: "Product-Focused Structure", description: "Clear section hierarchy designed to communicate value and drive activation." },
-      { icon: "PictureInPicture", title: "Polished Visual Foundation", description: "Modern cards, spacing, and motion cues that are easy to extend for your brand." },
-      { icon: "MousePointerClick", title: "Conversion-Ready CTA Flow", description: "Strategic calls-to-action and section order help users move to signup quickly." },
-      { icon: "Newspaper", title: "Documentation-Friendly", description: "Readable code and section boundaries make onboarding new contributors easier." },
-    ],
-  },
-
-  // ── Services ─────────────────────────────────────────────────────────────
-  services: {
-    eyebrow: "Services",
-    heading: "Core starter capabilities",
-    subtitle:
-      "A pragmatic baseline for SaaS products that need to move quickly without sacrificing quality.",
-    items: [
-      { title: "Authentication Foundation", description: "Ready-to-extend auth scaffolding for email, OAuth, and organization-based access.", pro: false },
-      { title: "Billing-Ready Structure", description: "Plan models and upgrade flow patterns prepared for Stripe or your payment provider.", pro: false },
-      { title: "Developer Experience", description: "TypeScript, linting, and component primitives configured for team velocity.", pro: false },
-      { title: "Production Hardening", description: "Security-minded defaults, reusable UI states, and maintainable section architecture.", pro: true },
-    ],
-  },
-
-  // ── Testimonials ─────────────────────────────────────────────────────────
-  testimonials: {
-    eyebrow: "Testimonials",
-    heading: "Teams shipping with Panda",
-    reviews: [
-      { image: "/demo-img.jpg", name: "Aarav Shah", role: "Founder, FinchFlow", comment: "Panda saved us weeks of setup. We launched our first paying plan in less than a sprint.", rating: 5.0 },
-      { image: "/demo-img.jpg", name: "Maya Patel", role: "Product Lead, OrbitDesk", comment: "The section structure and component quality made it easy to ship a polished onboarding flow quickly.", rating: 4.8 },
-      { image: "/demo-img.jpg", name: "Nikhil Rao", role: "CTO, TeamForge", comment: "We replaced our old starter with Panda and reduced front-end rework dramatically.", rating: 4.9 },
-      { image: "/demo-img.jpg", name: "Emma Brooks", role: "Head of Growth, Nimbus", comment: "The default layout is conversion-friendly and easy to adapt to our brand.", rating: 5.0 },
-      { image: "/demo-img.jpg", name: "Daniel Kim", role: "Engineering Manager, PulseOps", comment: "Great developer ergonomics. New engineers onboarded fast and started shipping immediately.", rating: 5.0 },
-      { image: "/demo-img.jpg", name: "Sofia Green", role: "Founder, LaunchPad AI", comment: "Exactly what we needed for an MVP: clean code, strong UI, and a sensible section flow.", rating: 4.9 },
-    ],
-  },
-
-  // ── Team ─────────────────────────────────────────────────────────────────
-  team: {
-    eyebrow: "Team",
-    heading: "Meet the Panda team",
-    members: [
-      {
-        imageUrl: "/team1.jpg",
-        firstName: "Leo",
-        lastName: "Miranda",
-        positions: ["Lead Engineer", "Starter Architecture"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-          { name: "Github", url: "https://github.com/leoMirandaa" },
-          { name: "X", url: "https://x.com/leo_mirand4" },
-        ],
-      },
-      {
-        imageUrl: "/team2.jpg",
-        firstName: "Elizabeth",
-        lastName: "Moore",
-        positions: ["Product Designer"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-          { name: "X", url: "https://x.com/leo_mirand4" },
-        ],
-      },
-      {
-        imageUrl: "/team3.jpg",
-        firstName: "David",
-        lastName: "Diaz",
-        positions: ["Platform Engineer", "AI Integrations"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-          { name: "Github", url: "https://github.com/leoMirandaa" },
-        ],
-      },
-      {
-        imageUrl: "/team1.jpg",
-        firstName: "Sarah",
-        lastName: "Robinson",
-        positions: ["Cloud Engineer", "Kubernetes"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-          { name: "Github", url: "https://github.com/leoMirandaa" },
-          { name: "X", url: "https://x.com/leo_mirand4" },
-        ],
-      },
-      {
-        imageUrl: "/team2.jpg",
-        firstName: "Michael",
-        lastName: "Holland",
-        positions: ["DevOps Engineer", "CI/CD"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-        ],
-      },
-      {
-        imageUrl: "/team3.jpg",
-        firstName: "Zoe",
-        lastName: "Garcia",
-        positions: ["Frontend Engineer", "Design Systems"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-          { name: "Github", url: "https://github.com/leoMirandaa" },
-        ],
-      },
-      {
-        imageUrl: "/team1.jpg",
-        firstName: "Evan",
-        lastName: "James",
-        positions: ["Backend Engineer"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-          { name: "Github", url: "https://github.com/leoMirandaa" },
-          { name: "X", url: "https://x.com/leo_mirand4" },
-        ],
-      },
-      {
-        imageUrl: "/team2.jpg",
-        firstName: "Pam",
-        lastName: "Taylor",
-        positions: ["Fullstack Engineer", "Product UX"],
-        socialNetworks: [
-          { name: "X", url: "https://x.com/leo_mirand4" },
-        ],
-      },
-    ],
-  },
-
-  // ── Pricing ──────────────────────────────────────────────────────────────
-  pricing: {
-    eyebrow: "Pricing",
-    heading: "Pricing for every stage",
-    subtitle: "Start lean, then scale to enterprise-grade workflows as your product grows.",
-    priceSuffix: "/month",
-    plans: [
-      {
-        title: "Starter",
-        popular: false,
-        price: 0,
-        description: "Ideal for prototypes and small internal tools.",
-        buttonText: "Start for free",
-        benefits: ["Up to 3 teammates", "Basic auth patterns", "Core landing sections", "Community support", "Deploy-ready setup"],
-      },
-      {
-        title: "Growth",
-        popular: true,
-        price: 49,
-        description: "Best for product teams shipping customer-facing SaaS.",
-        buttonText: "Start trial",
-        benefits: ["Unlimited teammates", "Advanced section set", "Billing-ready models", "Priority support", "Team workflows"],
-      },
-      {
-        title: "Enterprise",
-        popular: false,
-        price: 199,
-        description: "For teams requiring compliance, support SLAs, and custom rollout.",
-        buttonText: "Contact sales",
-        benefits: ["Security review support", "SSO/SAML integration path", "Dedicated onboarding", "Phone and email support", "Architecture advisory"],
-      },
-    ],
-  },
-
-  // ── Contact ──────────────────────────────────────────────────────────────
-  contact: {
-    eyebrow: "Contact",
-    heading: "Talk to the Panda team",
-    description:
-      "Need help customizing the starter, planning architecture, or accelerating launch? Share your goals and timeline.",
-    mailtoAddress: "hello@panda.dev",
-    info: {
-      address: { label: "Find us", value: "Remote-first • San Francisco, CA" },
-      phone: { label: "Call us", value: "+1 (415) 555-0199" },
-      email: { label: "Email us", value: "hello@panda.dev" },
-      hours: { label: "Visit us", value: ["Monday - Friday", "9AM - 6PM PT"] },
+export function getHomeContent() {
+  return {
+    hero: {
+      badgeInner: "MailSprout",
+      badgeOuter: "Smarter Email Marketing",
+      titleBefore: "Grow your business with ",
+      titleHighlight: "smarter emails",
+      titleAfter: " — effective, effortless, actionable.",
+      subtitle:
+        "MailSprout helps modern businesses and marketers create, send, and track powerful email campaigns. Easy list management, campaign design, and detailed analytics all in one secure, scalable platform.",
+      primaryCta: { label: "Start Sending Emails", href: "/auth#signup" },
+      secondaryCta: { label: "Book a Demo", href: "/contact" },
+      heroImageLight: "/hero-image-light.jpeg",
+      heroImageDark: "/hero-image-dark.jpeg",
+      heroImageAlt: "MailSprout dashboard preview — modern, intuitive, and effective",
     },
-    formSubjects: ["Starter Demo", "Architecture Review", "Design System", "Billing Integration", "Enterprise Plan"],
-    formSubmitLabel: "Send inquiry",
-  },
-
-  // ── FAQ ──────────────────────────────────────────────────────────────────
-  faq: {
-    eyebrow: "FAQ",
-    heading: "Common Questions",
-    items: [
-      { question: "Is Panda free to start with?", answer: "Yes. You can start with the core template and customize it for your product." },
-      { question: "Can I use this for a production SaaS app?", answer: "Yes. The starter is designed for production-minded teams with scalable structure and reusable UI patterns." },
-      { question: "Does it support dark mode and responsive design?", answer: "Yes. The template includes theme support and responsive layouts across major sections." },
-      { question: "Can I plug in my own auth and billing provider?", answer: "Yes. The structure is provider-agnostic and easy to adapt for your stack." },
-      { question: "How quickly can I launch with Panda?", answer: "Most teams can ship an MVP in days by reusing existing sections and starter patterns." },
-    ],
-  },
-
-  // ── Footer ───────────────────────────────────────────────────────────────
-  footer: {
-    brandName: "Panda",
-    columns: [
-      {
-        heading: "Contact",
-        links: [
-          { label: "hello@panda.dev", href: "mailto:hello@panda.dev" },
-          { label: "Github", href: "#" },
-          { label: "Twitter", href: "https://x.com" },
-          { label: "Discord", href: "https://discord.com" },
-        ],
+    features: {
+      eyebrow: "How MailSprout Works",
+      heading: "All-in-One Email Campaign Platform",
+      subtitle:
+        "Manage lists, design templates, schedule campaigns, and measure results — MailSprout gives you everything you need to grow.",
+      items: [
+        {
+          icon: "UserPlus",
+          title: "List Management",
+          description:
+            "Effortlessly build and segment your audience. Import subscribers in seconds and keep your lists clean and engaged.",
+        },
+        {
+          icon: "PenTool",
+          title: "Design Templates",
+          description:
+            "Create stunning emails with our easy editor or choose from proven templates. Preview, duplicate, and edit without friction.",
+        },
+        {
+          icon: "Send",
+          title: "Campaign Creation",
+          description:
+            "Launch one-time or recurring campaigns to target lists. Schedule, send, and manage with a few clicks.",
+        },
+        {
+          icon: "BarChart3",
+          title: "Actionable Analytics",
+          description:
+            "Track deliveries, opens, clicks, bounces, and unsubscribes. Filter, compare, and export your results.",
+        },
+        {
+          icon: "Lock",
+          title: "Deliverability & Security",
+          description:
+            "Industry-best standards, secure data handling, easy unsubscribe, and privacy built-in for every email.",
+        },
+        {
+          icon: "Users",
+          title: "Team & Roles",
+          description:
+            "Invite collaborators, control access, and keep your data tenant-scoped and safe as you scale.",
+        },
+      ],
+    },
+    benefits: {
+      eyebrow: "Why MailSprout",
+      heading: "Growth-Focused. Marketer Approved.",
+      description:
+        "Whether you’re just starting or scaling fast, MailSprout is built to help you grow. Our platform makes email marketing approachable for small teams and powerful for bigger ones.",
+      items: [
+        {
+          icon: "LayoutGrid",
+          title: "Intuitive Dashboard",
+          description: "Easy to use, fast to master—no steep learning curve required.",
+        },
+        {
+          icon: "Sparkle",
+          title: "Beautiful Campaigns",
+          description: "Design emails that stand out, convert, and look great on any device.",
+        },
+        {
+          icon: "WifiOff",
+          title: "Unsub/Privacy Tools",
+          description: "Respect your subscribers with built-in privacy and compliance controls.",
+        },
+        {
+          icon: "Rocket",
+          title: "Always Improving",
+          description: "We add features fast—so your marketing stays ahead of the curve.",
+        },
+      ],
+    },
+    services: {
+      eyebrow: "MailSprout Solutions",
+      heading: "Tools Tailored for Results",
+      subtitle:
+        "Our solutions are built for real business challenges: from lead gen to customer loyalty and sales.",
+      items: [
+        {
+          title: "Audience Segmentation",
+          description:
+            "Send targeted emails to the right people at the right time. Grow engagement by personalizing your communications.",
+          pro: false,
+        },
+        {
+          title: "Automated Scheduling",
+          description:
+            "Plan and launch campaigns when your audience is ready—even when you’re not at your desk.",
+          pro: false,
+        },
+        {
+          title: "Drag-and-Drop Builder",
+          description:
+            "Assemble beautiful emails with an intuitive visual editor; zero coding required.",
+          pro: true,
+        },
+        {
+          title: "Rich Analytics",
+          description:
+            "Measure every send. Drill down by list, template, or campaign to see exactly what’s working.",
+          pro: false,
+        },
+      ],
+    },
+    testimonials: {
+      eyebrow: "Success Stories",
+      heading: "Real Results from Marketers",
+      reviews: [
+        {
+          name: "Samantha V.",
+          role: "Growth Marketer",
+          image: "/team1.jpg",
+          comment:
+            "MailSprout made our email campaigns 3x faster to set up, and the analytics helped us boost open rates by 22%.",
+        },
+        {
+          name: "Carlos M.",
+          role: "SaaS Founder",
+          image: "/team2.jpg",
+          comment:
+            "The list import and unsubscribe management is fantastic—super simple and GDPR-ready from day one.",
+        },
+        {
+          name: "Emily R.",
+          role: "Ecommerce Lead",
+          image: "/team3.jpg",
+          comment:
+            "Templates are gorgeous and easy to edit. I built our first campaign in under 10 minutes and saw immediate results.",
+        },
+      ],
+    },
+    pricing: {
+      eyebrow: "Simple Pricing",
+      heading: "MailSprout Plans",
+      subtitle: "Start free, grow as fast as you like. No surprise charges. All tiers support unlimited team members.",
+      priceSuffix: "/mo",
+      plans: [
+        {
+          title: "Starter",
+          popular: false,
+          price: "0",
+          description: "Get started with basic campaign features and up to 1,000 subscribers.",
+          buttonText: "Start free",
+          benefits: [
+            "1,000 subscribers",
+            "Unlimited lists & templates",
+            "Basic analytics",
+            "Essential deliverability",
+          ],
+        },
+        {
+          title: "Growth",
+          popular: true,
+          price: "29",
+          description: "Advanced segmentation, scheduling, automation, and rich analytics.",
+          buttonText: "Upgrade",
+          benefits: [
+            "Everything in Starter",
+            "Up to 10,000 subscribers",
+            "Segmentation & automation",
+            "Priority support",
+            "Advanced analytics",
+          ],
+        },
+        {
+          title: "Enterprise",
+          popular: false,
+          price: "99",
+          description: "Custom domains, advanced delivery options, dedicated onboarding.",
+          buttonText: "Contact Sales",
+          benefits: [
+            "Everything in Growth",
+            "Custom domain & sender",
+            "Dedicated onboarding",
+            "Premium deliverability",
+            "Personal account manager",
+          ],
+        },
+      ],
+    },
+    faq: {
+      eyebrow: "FAQ",
+      heading: "Answers to Your Email Marketing Questions",
+      items: [
+        {
+          question: "What makes MailSprout different?",
+          answer:
+            "MailSprout combines ease of use, stunning templates, powerful list management and analytics, and best-practice deliverability in one product—so small teams can get started, and big teams can scale with confidence.",
+        },
+        {
+          question: "Can I import my existing subscribers?",
+          answer:
+            "Absolutely. Easily import contacts via CSV or add them manually. Duplicate emails are automatically handled to keep your lists clean.",
+        },
+        {
+          question: "How do campaigns and templates work?",
+          answer:
+            "Create and save templates for reuse. Every campaign can target specific lists with the design and analytics you need. The editor makes customization simple.",
+        },
+        {
+          question: "How does MailSprout handle unsubscribes and compliance?",
+          answer:
+            "Every email sent by MailSprout includes unsubscribe links and required headers for compliance. Bounced and unsubscribed addresses are automatically excluded from future campaigns.",
+        },
+        {
+          question: "Do I need to know code to use MailSprout?",
+          answer:
+            "No code required! Our drag-and-drop builder and template editor are designed for everyone—from founders to marketers and beyond.",
+        },
+        {
+          question: "Is MailSprout suitable for teams?",
+          answer:
+            "Yes! Invite as many team members as you want and control their access levels. Collaboration is built into every MailSprout plan.",
+        },
+      ],
+    },
+    footer: {
+      brandName: "MailSprout",
+      columns: [
+        {
+          heading: "Product",
+          links: [
+            { label: "Features", href: "#features" },
+            { label: "How it Works", href: "#benefits" },
+            { label: "Pricing", href: "#pricing" },
+            { label: "Sign Up", href: "/auth#signup" },
+          ],
+        },
+        {
+          heading: "Company",
+          links: [
+            { label: "About", href: "#" },
+            { label: "Contact", href: "/contact" },
+            { label: "Status", href: "#" },
+          ],
+        },
+        {
+          heading: "Resources",
+          links: [
+            { label: "Guides", href: "#" },
+            { label: "API Docs", href: "#" },
+            { label: "Blog", href: "#" },
+            { label: "Help Center", href: "#" },
+          ],
+        },
+        {
+          heading: "Legal",
+          links: [
+            { label: "Privacy", href: "#" },
+            { label: "Terms", href: "#" },
+          ],
+        },
+      ],
+      attribution: {
+        label: "Chirag Dodiya",
+        href: "mailto:hi@chirag.co",
       },
-      {
-        heading: "Product",
-        links: [
-          { label: "Features", href: "#features" },
-          { label: "Pricing", href: "#pricing" },
-          { label: "Contact", href: "#contact" },
-        ],
-      },
-      {
-        heading: "Help",
-        links: [
-          { label: "Contact Us", href: "#contact" },
-          { label: "FAQ", href: "#faq" },
-          { label: "Docs", href: "https://nextjs.org/docs" },
-        ],
-      },
-      {
-        heading: "Socials",
-        links: [
-          { label: "GitHub", href: "https://github.com" },
-          { label: "Discord", href: "https://discord.com" },
-          { label: "X", href: "https://x.com" },
-        ],
-      },
-    ],
-    copyright: "\u00a9 2026 Panda SaaS App Builder Starter.",
-    attribution: { label: "Built on Next.js", href: "https://nextjs.org" },
-  },
-
-  // ── Navbar ───────────────────────────────────────────────────────────────
-  navbar: {
-    brandName: "Panda",
-    routes: [
-      { href: "/#testimonials", label: "Testimonials" },
-      { href: "/#team", label: "Team" },
-      { href: "/#contact", label: "Contact" },
-      { href: "/#faq", label: "FAQ" },
-    ],
-    featureDropdownLabel: "Features",
-    featureImage: { src: "/demo-img.jpg", alt: "Panda preview" },
-    features: [
-      { title: "Auth, Billing, Teams", description: "Production-ready flows for sign-in, subscriptions, and organizations." },
-      { title: "UI + Design System", description: "Shadcn-based components with consistent theming and dark mode support." },
-      { title: "Deploy Fast", description: "Sane defaults for Next.js, TypeScript, and Vercel-first deployment." },
-    ],
-    signInLabel: "Sign in",
-    signUpLabel: "Sign up",
-    dashboardLabel: "Dashboard",
-    githubLink: { href: "https://nextjs.org/docs", ariaLabel: "View on GitHub" },
-  },
-};
-
-export function getHomeContent(): HomeContent {
-  return defaultHomeContent;
+      copyright: "© " + new Date().getFullYear() + " MailSprout. Made with passion by",
+    },
+    team: {
+      eyebrow: "Meet the Founder",
+      heading: "Built & Supported by Experts",
+      members: [
+        {
+          imageUrl: "/team1.jpg",
+          firstName: "Chirag",
+          lastName: "Dodiya",
+          positions: ["Founder", "Product Lead"],
+          socialNetworks: [
+            { name: "LinkedIn", url: "https://linkedin.com/in/chiragdodiya" },
+            { name: "Github", url: "https://github.com/chiragdodiya" },
+          ],
+        },
+      ],
+    },
+  };
 }
