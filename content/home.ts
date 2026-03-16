@@ -14,6 +14,17 @@ export function getHomeContent() {
       heroImageDark: "/hero-image-dark.jpeg",
       heroImageAlt: "MailSprout dashboard preview — modern, intuitive, and effective",
     },
+    sponsors: {
+      heading: "Trusted By Growing Businesses",
+      items: [
+        { icon: "Rocket", name: "Rocketware" },
+        { icon: "Sparkle", name: "Sparklytics" },
+        { icon: "Wifi", name: "Loom Labs" },
+        { icon: "Mail", name: "Inboxly" },
+        { icon: "Zap", name: "Zapier" },
+        { icon: "Users", name: "SquadStack" },
+      ],
+    },
     features: {
       eyebrow: "How MailSprout Works",
       heading: "All-in-One Email Campaign Platform",
