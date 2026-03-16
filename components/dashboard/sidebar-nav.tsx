@@ -6,10 +6,12 @@ import { usePathname } from "next/navigation";
 import {
   ChevronDown,
   Home,
-  Hammer,
-  Settings,
+  List,
   Users,
-  CreditCard,
+  FileText,
+  Mail,
+  BarChart3,
+  Settings,
 } from "lucide-react";
 import {
   Collapsible,
@@ -26,21 +28,20 @@ type NavItem = {
 
 const sections: { title: string; items: NavItem[] }[] = [
   {
-    title: "Platform",
+    title: "MailSprout",
     items: [
-      { label: "Overview", href: "/dashboard", icon: Home },
-      {
-        label: "Feature",
-        href: "/dashboard/feature",
-        icon: Hammer,
-      },
+      { label: "Dashboard", href: "/dashboard", icon: Home },
+      { label: "Email Lists", href: "/dashboard/lists", icon: List },
+      { label: "Subscribers", href: "/dashboard/subscribers", icon: Users },
+      { label: "Templates", href: "/dashboard/templates", icon: FileText },
+      { label: "Campaigns", href: "/dashboard/campaigns", icon: Mail },
+      { label: "Analytics", href: "/dashboard/analytics", icon: BarChart3 },
     ],
   },
   {
     title: "Account",
     items: [
       { label: "Team", href: "/dashboard/team", icon: Users },
-      { label: "Billing", href: "#", icon: CreditCard, disabled: true },
       { label: "Settings", href: "/dashboard/settings", icon: Settings },
     ],
   },
@@ -76,6 +77,7 @@ function NavLink({
           ? "bg-primary/10 text-primary font-medium"
           : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
       }`}
+      scroll={false}
     >
       <Icon className="size-4" />
       {label}
